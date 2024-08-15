@@ -11,8 +11,8 @@ def modify_content(text):
 
 
 
-content = uread(r'item.txt')
-image_path = 'https://cdn.jsdelivr.net/gh/FrozenCollection/EnglishLearning@main/item/image/{}'
+content = uread(r'struct.txt')
+image_path = 'https://cdn.jsdelivr.net/gh/FrozenCollection/EnglishLearning@main/struct/image/{}'
 
 with uopen(r'words.txt', 'w') as fout:
     word = ''
@@ -20,7 +20,7 @@ with uopen(r'words.txt', 'w') as fout:
     for line in content.split('\n'):
         if flag := not flag:
             word = line
-            line = '[VIZ-N] ' + line
+            line = '[VIZ-S] ' + line
             fout.write(line + '\t')
         else:
             line = modify_content(line)
